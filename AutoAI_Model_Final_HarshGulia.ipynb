@@ -1,0 +1,91 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "fa825efa",
+   "metadata": {},
+   "source": [
+    "# House Price Prediction using IBM Watson AutoAI"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "324ef4d1",
+   "metadata": {},
+   "source": [
+    "\n",
+    "This notebook demonstrates how to use a deployed AutoAI model from IBM Watson Studio to predict house prices.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "38fd959f",
+   "metadata": {},
+   "source": [
+    "\n",
+    "### Input Features Used:\n",
+    "- stories\n",
+    "- prefarea\n",
+    "- parking\n",
+    "- mainroad\n",
+    "- hotwaterheating\n",
+    "- guestroom\n",
+    "- furnishingstatus\n",
+    "- bedrooms\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2b5fc2ed",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "# Install required packages if not already installed\n",
+    "!pip install ibm-watson-machine-learning -q\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6ea85777",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "from ibm_watson_machine_learning import APIClient\n",
+    "\n",
+    "wml_credentials = {\n",
+    "    \"url\": \"https://au-syd.ml.cloud.ibm.com\",\n",
+    "    \"apikey\": \"zZAxkS1WwsLbg0ISQPjV1dMx6HWrI4R-QdDY99_aaAt8\"\n",
+    "}\n",
+    "\n",
+    "client = APIClient(wml_credentials)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "35d74c05",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "\n",
+    "deployment_uid = '4f900a84-cd76-4a1a-935a-ef72ebba0e23'\n",
+    "model_input = {\n",
+    "    client.deployments.ScoringMetaNames.INPUT_DATA: [{\n",
+    "        \"fields\": [\"stories\", \"prefarea\", \"parking\", \"mainroad\", \"hotwaterheating\", \"guestroom\", \"furnishingstatus\", \"bedrooms\"],\n",
+    "        \"values\": [[2.0, \"yes\", 1.0, \"yes\", \"no\", \"yes\", \"furnished\", 3.0]]\n",
+    "    }]\n",
+    "}\n",
+    "\n",
+    "predictions = client.deployments.score(deployment_uid, model_input)\n",
+    "print(\"Prediction Output:\", predictions)\n"
+   ]
+  }
+ ],
+ "metadata": {},
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
