@@ -1,72 +1,39 @@
-# 🤖 AutoAI Model Building in IBM Watson Studio
+# AutoAI Model: House Price Prediction
 
-![AutoAI Project Banner](6c859d46-b48d-47e3-bfd9-001baab8da72.png)
-
-## 🧾 Project Information
-
-- **Project Title**: AutoAI Model Building using IBM Watson Studio  
-- **Technology Used**: Artificial Intelligence  
-- **Difficulty Level**: Beginner  
-- **Created By**: Harsh Gulia
+This project demonstrates the use of IBM Watson Studio's AutoAI to predict house prices based on various features.
 
 ---
 
-## 📌 Objective
-
-This project focuses on building a high-performing machine learning model using **IBM Watson Studio's AutoAI** feature.  
-The AutoAI tool helps automate:
-- Data preprocessing  
-- Feature selection  
-- Algorithm selection  
-- Model building and optimization  
+## 🔗 Live Demo URL
+[Click to Use Model API](https://au-syd.ml.cloud.ibm.com/ml/v4/deployments/4f900a84-cd76-4a1a-935a-ef72ebba0e23/predictions?version=2021-05-01)
 
 ---
 
-## 🧠 Key Concepts
+## 🧠 Project Description
 
-- AutoAI pipeline generation  
-- Data preparation  
-- Model evaluation  
-- Model deployment  
-- AutoAI API usage  
-- Python code extraction from Watson Studio
+The goal of this project is to use IBM Watson Studio AutoAI to build a regression model that predicts housing prices using various categorical and numerical input features. The dataset was preprocessed and fed into AutoAI, which automatically generated multiple pipelines and selected the best one based on RMSE.
 
 ---
 
-## 🚀 Steps to Execute
+## ⚙️ Implementation Details
 
-1. **Login to IBM Watson Studio**
-2. **Create a new AutoAI experiment**
-3. **Upload your dataset (CSV or Excel)**
-4. **Run the AutoAI process and analyze the models**
-5. **Choose the best model**
-6. **Export Python code**
-7. **Deploy and test your model**
+- Platform: IBM Watson Studio (AutoAI)
+- Dataset: Housing.csv
+- Model Type: Ridge Regression (Pipeline 8)
+- API deployed using IBM Watson Machine Learning
+- Best RMSE: ~1117271.79 (Cross Validation)
 
 ---
 
-## ✅ Deliverables
+## 🧩 Challenges & Solutions
 
-- AutoAI generated pipeline
-- Python notebook (exported)
-- Deployed model/scoring endpoint (if applicable)
-- Report summarizing your findings and results
+- **Challenge:** AutoAI model deployment was not clearly visible initially.
+- **Solution:** Promoted model to deployment space, created REST endpoint, and tested predictions using payload.
 
 ---
 
-## 📤 Submission Status
+## 📁 Files Included
 
-- [ ] Assignment Submitted  
-- [ ] Project Submitted  
-
----
-
-## 👤 Author
-
-**Name**: Harsh Gulia  
-**Field**: BTech CSE - Artificial Intelligence & Machine Learning  
-**Tools Used**: IBM Watson Studio, AutoAI, Python
-
----
-
-> 📌 *This beginner-friendly project is a great start for anyone entering the world of AI and automation in machine learning.*
+- `AutoAI_Model.ipynb`: Code to load model, send prediction request
+- `Housing.csv`: Dataset used
+- `README.md`: Documentation
