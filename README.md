@@ -7,6 +7,7 @@ This project demonstrates the use of IBM Watson Studio's AutoAI to predict house
 ## 🔗 Live Demo URL
 [Click to Use Model API](https://au-syd.ml.cloud.ibm.com/ml/v4/deployments/4f900a84-cd76-4a1a-935a-ef72ebba0e23/predictions?version=2021-05-01)
 
+
 ---
 
 ## 🧠 Project Description
